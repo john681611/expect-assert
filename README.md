@@ -4,6 +4,8 @@ Extension for mocha that expects any assertion to have run in each test otherwis
 # Tested with:
 * Chai:
   * Expect
+  * Assert
+  * Should *(extended only)
 
 ## Installation
 1.  Require at start of tests or in your testing config.
