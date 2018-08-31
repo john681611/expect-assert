@@ -1,0 +1,32 @@
+{
+  "name": "expect-assert",
+  "version": "0.0.1",
+  "description": "Extension for mocha that expects any assertion to have run in each test otherwise throwing error.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -- exit *.test.js",
+    "lint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john681611/expect-assert.git"
+  },
+  "keywords": [
+    "mocha",
+    "expect",
+    "assert"
+  ],
+  "author": "john681611",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john681611/expect-assert/issues"
+  },
+  "homepage": "https://github.com/john681611/expect-assert#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
+  }
+}
