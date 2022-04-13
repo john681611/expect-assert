@@ -17,3 +17,17 @@ Extension for mocha that expects any assertion to have run in each test otherwis
     const expect = expectAssert(chai.expect);
     ```
 3. Use where you need.
+
+### Alternative global setup with mocha root hook plugin
+
+```
+// hooks.js
+const expectAssert = require('expect-assert');
+chai.expect = expectAssert(chai.expect); // override expect() everywhere
+```
+
+Register the hooks in mocha:
+
+```
+mocha --require expect-assert/hooks hooks.js
+```

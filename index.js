@@ -23,16 +23,23 @@ const functionWrapper = assertion => {
     return assertion;
 };
 
-module.exports = (assertion, test = false) => {
+function assertionTester (test) {
+    if (!assertionRan) {
+        this.currentTest.emit('error', new Error(`Assertion didn't run, check your test: ${this.currentTest.title}`));//eslint-disable-line no-invalid-this
+    }
+    if (!test) {
+        assertionRan = false;
+    }
+}
 
-    afterEach('Assertion tester', function () {
-        if (!assertionRan) {
-            this.currentTest.emit('error',  new Error(`Assertion didn't run, check your test: ${this.currentTest.title}`));//eslint-disable-line no-invalid-this
-        }
-        if(!test) {
-            assertionRan = false;
-        }
-    });
+module.exports = (assertion, test = false) => {
+    if (global.afterEach) {
+        afterEach('Assertion tester', function () {
+            assertionTester.call(this, test);//eslint-disable-line no-invalid-this
+        });
+    }
 
     return functionWrapper(assertion);
 };
+
+module.exports.assertionTester = assertionTester;
