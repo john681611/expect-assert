@@ -23,11 +23,11 @@ Extension for mocha that expects any assertion to have run in each test otherwis
 ```
 // hooks.js
 const expectAssert = require('expect-assert');
-chai.expect = expectAssert(chai.expect);
+chai.expect = expectAssert(chai.expect); // override expect() everywhere
+```
 
-exports.mochaHooks = {
-    afterEach () {
-        expectAssert.assertionTester.call(this);
-    },
-};
+Register the hooks in mocha:
+
+```
+mocha --require expect-assert/hooks hooks.js
 ```
