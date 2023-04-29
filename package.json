@@ -25,7 +25,7 @@
   "homepage": "https://github.com/john681611/expect-assert#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.19.1",
+    "eslint": "^8.39.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
